@@ -4,6 +4,8 @@ import org.example.data.CarDao;
 import org.example.models.Car;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import java.io.IOException;
+
 
 public class App 
 {
@@ -19,5 +21,7 @@ public class App
         Car mySaab = carManager.create("Saab","900S","ABC123");
 
         System.out.println(mySaab);
+
     }
+
 }

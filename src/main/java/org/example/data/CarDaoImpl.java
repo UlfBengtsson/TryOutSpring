@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Component
 public class CarDaoImpl implements CarDao {
@@ -38,11 +39,16 @@ public class CarDaoImpl implements CarDao {
 
     @Override
     public boolean delete(int id) {
-        return false;
+        return carList.removeIf( c -> c.getId() == id);
     }
 
     @Override
     public Car findById(int id) {
+        Optional<Car> opCar = carList.stream().filter(c -> c.getId() == id).findFirst();
+        if (opCar.isPresent()) {
+            return opCar.get();
+        }
+
         return null;
     }
 
