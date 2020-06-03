@@ -10,7 +10,7 @@ import java.util.Optional;
 @Component
 public class CarDaoImpl implements CarDao {
 
-    private int idCounter = 0;
+    private int idCounter = 1;
     private List<Car> carList = new ArrayList<>();
 
     @Override

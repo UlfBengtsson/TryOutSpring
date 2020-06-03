@@ -4,7 +4,6 @@ import org.springframework.stereotype.Component;
 
 import java.util.Objects;
 
-@Component
 public class Car {
     private int id;
     private String modelName;
@@ -72,5 +71,15 @@ public class Car {
     @Override
     public int hashCode() {
         return Objects.hash(getId(), getModelName(), getBrand(), getRegPlate());
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "id=" + id +
+                ", modelName='" + modelName + '\'' +
+                ", brand='" + brand + '\'' +
+                ", regPlate='" + regPlate + '\'' +
+                '}';
     }
 }
